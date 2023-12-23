@@ -26,7 +26,7 @@ const Sidebar = () => {
       <Separator className="my-2" />
       <SheetClose asChild>
         <Link href={"/login"} className="flex items-center p-2">
-          Login
+          Logout
         </Link>
       </SheetClose>
     </div>
