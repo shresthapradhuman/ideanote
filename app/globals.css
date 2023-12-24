@@ -57,3 +57,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+.editor-toolbar,
+.CodeMirror {
+  border-color: inherit !important;
+  background: inherit !important;
+  color: inherit !important;
+}
+.editor-toolbar > button {
+  background: inherit !important;
+}
+.editor-toolbar > button:hover {
+  background: inherit !important ;
+}
+
+.CodeMirror-cursor {
+  border-color: var(--border) !important;
+}
