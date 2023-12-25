@@ -61,15 +61,22 @@ const Navbar = () => {
               </SheetClose>
             )}
             {status === "authenticated" && (
-              <SheetClose asChild>
-                <Button
-                  variant={"ghost"}
-                  className="flex justify-start pl-2 hover:bg-transparent"
-                  onClick={handleLogout}
-                >
-                  Logout
-                </Button>
-              </SheetClose>
+              <>
+                <SheetClose asChild>
+                  <Link href={"/profile"} className="flex items-center p-2">
+                    Profile Settings
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Button
+                    variant={"ghost"}
+                    className="flex justify-start text-base font-light pl-2 hover:bg-transparent"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </Button>
+                </SheetClose>
+              </>
             )}
           </div>
         </SheetContent>
