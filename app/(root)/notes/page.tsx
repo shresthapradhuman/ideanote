@@ -3,6 +3,7 @@ import React from "react";
 import prisma from "@/prisma/client";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import NoteThumbnail from "./[slug]/_component/note-thumbnail";
 
 const NotesPage = async () => {
   const notes = await prisma.note.findMany({
@@ -31,16 +32,7 @@ const NotesPage = async () => {
             href={`/notes/${note.slug}`}
             className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 rounded-xl p-5 dark:border-gray-700 dark:hover:border-transparent dark:hover:shadow-black/[.4] dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
           >
-            <div className="aspect-w-16 aspect-h-11">
-              <Image
-                src={note.url!}
-                alt={note.title}
-                width={300}
-                height={300}
-                priority
-                className=" object-cover h-auto w-auto rounded-xl"
-              />
-            </div>
+            <NoteThumbnail url={note.url!} />
             <div className="my-6">
               <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-300 dark:group-hover:text-white truncate">
                 {note.title}
