@@ -67,7 +67,7 @@ const CommentForm = ({ noteId }: { noteId: string }) => {
   };
 
   return (
-    <div id="comment">
+    <div id="comment mb-4">
       <h1 className=" text-2xl font-bold mb-2">Comments</h1>
       {session.status === "authenticated" ? (
         <>
