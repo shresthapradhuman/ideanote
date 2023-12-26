@@ -11,7 +11,21 @@ import { randomBytes } from "crypto";
 const inter = Inter({ subsets: ["latin"] });
 
 const nonce = randomBytes(128).toString("base64");
-const csp = `object-src 'none'; base-uri 'none'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https: http: 'nonce-${nonce}' 'strict-dynamic'`;
+const cspHeader = `
+default-src 'self';
+script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
+style-src 'self' 'nonce-${nonce}';
+img-src 'self' blob: data:;
+font-src 'self';
+object-src 'none';
+base-uri 'self';
+form-action 'self';
+frame-ancestors 'none';
+block-all-mixed-content;
+upgrade-insecure-requests;
+`;
+
+const csp = cspHeader.replace(/\s{2,}/g, " ").trim();
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -43,6 +57,7 @@ export default async function RootLayout({
           <Toaster />
           {children}
         </AuthProvider>
+        <script nonce={nonce} />
       </body>
     </html>
   );
