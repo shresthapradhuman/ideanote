@@ -10,7 +10,7 @@ export async function uploadImage(
   image: string
 ): Promise<{ public_id: string; url: string }> {
   const result = await cloudinary.uploader.upload(image);
-  return { public_id: result.public_id, url: result.url };
+  return { public_id: result.public_id, url: result.secure_url };
 }
 
 export async function deleteImage(public_id: string) {
