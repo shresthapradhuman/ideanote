@@ -6,8 +6,12 @@ import { AuthProvider } from "@/providers/auth-provider";
 import { Toaster } from "react-hot-toast";
 import { getServerSession } from "next-auth";
 import { authOptions } from "./api/auth/authOptions";
+import { randomBytes } from "crypto";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const nonce = randomBytes(128).toString("base64");
+const csp = `object-src 'none'; base-uri 'none'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https: http: 'nonce-${nonce}' 'strict-dynamic'`;
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,7 +26,8 @@ export default async function RootLayout({
   const session = await getServerSession(authOptions);
   return (
     <html lang="en" suppressHydrationWarning className="dark">
-      <head>
+      <head nonce={nonce}>
+        <meta httpEquiv="Content-Security-Policy" content={csp} />
         <link
           href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
           rel="stylesheet"
