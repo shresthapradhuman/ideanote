@@ -65,7 +65,7 @@ const CommentForm = ({ noteId }: { noteId: string }) => {
         : toast.error(error.message);
     }
   };
-
+console.log(data);
   return (
     <div id="comment mb-4">
       <h1 className=" text-2xl font-bold mb-2">Comments</h1>
