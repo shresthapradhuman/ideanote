@@ -57,7 +57,7 @@ export const GET = async (request: NextRequest) => {
         user: true,
       },
     });
-    return new NextResponse(JSON.stringify(comments), { status: 200 });
+    return NextResponse.json(comments, { status: 200 });
   } catch (error) {
     return NextResponse.json(
       { message: "Something went wrong!" },
