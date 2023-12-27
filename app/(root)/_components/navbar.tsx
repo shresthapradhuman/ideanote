@@ -11,7 +11,7 @@ import { MenuIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-import { signOut, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -70,15 +70,18 @@ const Navbar = () => {
           </Link>
         ))}
         {status === "unauthenticated" && (
-          <Link
-            href={"/api/auth/signin"}
-            className={buttonVariants({
-              variant: "outline",
-              size: "sm",
-            })}
-          >
+          // <Link
+          //   href={"/api/auth/signin"}
+          //   className={buttonVariants({
+          //     variant: "outline",
+          //     size: "sm",
+          //   })}
+          // >
+          //   Login
+          // </Link>
+          <Button variant={"outline"} size={"sm"} onClick={()=> signIn()}>
             Login
-          </Link>
+          </Button>
         )}
         {status === "authenticated" && (
           <DropdownMenu>
