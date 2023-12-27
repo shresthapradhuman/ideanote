@@ -24,6 +24,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import toast from "react-hot-toast";
 import { Separator } from "@/components/ui/separator";
+import { ModeToggle } from "@/components/mode-toggle";
 
 const navItems = [
   {
@@ -69,19 +70,15 @@ const Navbar = () => {
             {item.label}
           </Link>
         ))}
+        <ModeToggle />
         {status === "unauthenticated" && (
-          // <Link
-          //   href={"/api/auth/signin"}
-          //   className={buttonVariants({
-          //     variant: "outline",
-          //     size: "sm",
-          //   })}
-          // >
-          //   Login
-          // </Link>
-          <Button variant={"outline"} onClick={()=> signIn()}  className={cn(" text-muted-foreground hover:text-foreground", {
-            "text-foreground": pathname ==="/login",
-          })}>
+          <Button
+            variant={"outline"}
+            onClick={() => signIn()}
+            className={cn(" text-muted-foreground hover:text-foreground", {
+              "text-foreground": pathname === "/login",
+            })}
+          >
             Login
           </Button>
         )}

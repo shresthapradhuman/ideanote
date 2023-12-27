@@ -79,8 +79,8 @@ const RecentNote = ({ items }: { items: ItemProps[] | null }) => {
                     alt="thumbnail"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    loading="lazy"
                     className="h-full w-full object-cover object-center transition-all hover:scale-105"
+                    priority
                   />
                 </AspectRatio>
                 <div className="flex flex-wrap gap-y-2 pt-2 items-center justify-between">
