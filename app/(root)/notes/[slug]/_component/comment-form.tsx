@@ -46,7 +46,7 @@ const CommentForm = ({ noteId }: { noteId: string }) => {
     },
   });
   const { data, mutate, isLoading } = useSWR<CommentProps[]>(
-    `http://localhost:3000/api/notes/comments?noteId=${noteId}`,
+    `/api/notes/comments?noteId=${noteId}`,
     fetcher
   );
   const onSubmit = async (data: z.infer<typeof commentSchema>) => {
