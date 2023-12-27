@@ -1,5 +1,5 @@
 "use client";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetClose,
@@ -79,7 +79,7 @@ const Navbar = () => {
           // >
           //   Login
           // </Link>
-          <Button variant={"outline"} size={"sm"} onClick={()=> signIn()}>
+          <Button variant={"outline"} onClick={()=> signIn()}>
             Login
           </Button>
         )}
