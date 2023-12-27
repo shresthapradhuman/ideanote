@@ -79,7 +79,9 @@ const Navbar = () => {
           // >
           //   Login
           // </Link>
-          <Button variant={"outline"} onClick={()=> signIn()}>
+          <Button variant={"outline"} onClick={()=> signIn()}  className={cn(" text-muted-foreground hover:text-foreground", {
+            "text-foreground": pathname ==="/login",
+          })}>
             Login
           </Button>
         )}
