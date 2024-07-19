@@ -48,7 +48,7 @@ const Navbar = () => {
   return (
     <header className="flex items-center justify-between h-16 px-4 md:px-0">
       <Link href={"/"} className="flex items-center text-xl">
-        <i className="ri-brain-line text-xl font-semibold mr-1"></i> SIDENOTE
+        <span className="h-7 w-7 p-6 bg-foreground text-background">PS</span>
       </Link>
       <div className="md:flex items-center space-x-6 hidden">
         {navItems.map((item) => (
