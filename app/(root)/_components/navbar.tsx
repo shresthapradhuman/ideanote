@@ -27,10 +27,10 @@ import { Separator } from "@/components/ui/separator";
 import { ModeToggle } from "@/components/mode-toggle";
 
 const navItems = [
-  {
-    label: "My Notes",
-    href: "/notes",
-  }
+  // {
+  //   label: "My Notes",
+  //   href: "/notes",
+  // }
 ];
 
 const handleLogout = () => {
