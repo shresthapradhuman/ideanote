@@ -42,7 +42,7 @@ const Navbar = () => {
   return (
     <header className="flex items-center justify-between h-16 px-4 md:px-0">
       <Link href={"/"} className="flex items-center text-xl">
-        <span className="h-7 w-7 p-6 bg-foreground flex items-center justify-center text-background">PS</span>
+        <span className="h-7 w-7 p-2 bg-foreground flex items-center justify-center text-background">PS</span>
       </Link>
       <div className="md:flex items-center space-x-3 hidden">
       
