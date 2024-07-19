@@ -28,17 +28,9 @@ import { ModeToggle } from "@/components/mode-toggle";
 
 const navItems = [
   {
-    label: "Notes",
+    label: "My Notes",
     href: "/notes",
-  },
-  {
-    label: "Projects",
-    href: "/projects",
-  },
-  {
-    label: "Contacts",
-    href: "/contacts",
-  },
+  }
 ];
 
 const handleLogout = () => {
