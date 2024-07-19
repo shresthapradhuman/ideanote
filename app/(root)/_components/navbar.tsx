@@ -26,12 +26,6 @@ import toast from "react-hot-toast";
 import { Separator } from "@/components/ui/separator";
 import { ModeToggle } from "@/components/mode-toggle";
 
-const navItems = [
-  // {
-  //   label: "My Notes",
-  //   href: "/notes",
-  // }
-];
 
 const handleLogout = () => {
   try {
@@ -50,18 +44,8 @@ const Navbar = () => {
       <Link href={"/"} className="flex items-center text-xl">
         <span className="h-7 w-7 p-6 bg-foreground text-background">PS</span>
       </Link>
-      <div className="md:flex items-center space-x-6 hidden">
-        {navItems.map((item) => (
-          <Link
-            key={item.label}
-            href={item.href}
-            className={cn(" text-muted-foreground hover:text-foreground", {
-              "text-foreground": pathname === item.href,
-            })}
-          >
-            {item.label}
-          </Link>
-        ))}
+      <div className="md:flex items-center space-x-3 hidden">
+      
         <ModeToggle />
         {status === "unauthenticated" && (
           <Button
@@ -127,14 +111,6 @@ const Navbar = () => {
           </SheetTrigger>
           <SheetContent>
             <div className="flex flex-col pt-6">
-              {navItems.map((item) => (
-                <SheetClose asChild key={item.label}>
-                  <Link href={item.href} className="flex items-center p-2">
-                    {item.label}
-                  </Link>
-                </SheetClose>
-              ))}
-              <Separator className="my-2" />
               {status === "unauthenticated" && (
                 <SheetClose asChild>
                   <Link href={"/login"} className="flex items-center p-2">
