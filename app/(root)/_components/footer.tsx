@@ -9,7 +9,7 @@ const Footer = () => {
         <p className="text-center">
           Copyright © 2022 - All right reserved by{" "}
           <span className="font-semibold text-foreground-muted">
-            Pixel Craft
+            Shrestha Pradhuman
           </span>
         </p>
       </footer>
